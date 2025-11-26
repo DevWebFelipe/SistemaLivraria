@@ -8,8 +8,6 @@ public class Main {
     static void main(String[] args) {
         Biblioteca biblioteca = new Biblioteca();
 
-        int teste = 0;
-
         while (true) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Quer ver os livros disponíveis? (s/n)");
@@ -25,11 +23,47 @@ public class Main {
 
             for (int i = 0; i < biblioteca.livros.toArray().length; i++) {
                 if (biblioteca.livros.get(i).disponivel) {
-                    System.out.println("Livro = " + biblioteca.livros.get(i).titulo);
+                    System.out.println("Id = " + biblioteca.livros.get(i).id.toString() +
+                            " | Autor = " + biblioteca.livros.get(i).autor +
+                            " | Livro = " + biblioteca.livros.get(i).titulo);
                 }
             }
 
-            teste++;
+            System.out.println("Deseja solicitar empréstimo de algum livro? (s/n)");
+            response = scanner.nextLine();
+
+            if (!response.equals("s")) {
+                System.out.println("Sistema finalizado!");
+                break;
+            }
+
+            while (true) {
+                System.out.println("Qual Id do livro desejado?");
+                String idLivroSelecionado = scanner.nextLine();
+                boolean nenhumLivroSelecionado = true;
+
+                for (int i = 0; i < biblioteca.livros.toArray().length; i++) {
+                    if (biblioteca.livros.get(i).id.toString().equals(idLivroSelecionado)) {
+                        System.out.println("Informe seu nome para registrar do empréstimo");
+                        String nomeCliente = scanner.nextLine();
+
+                        System.out.println("Livro emprestado -> Id = " + biblioteca.livros.get(i).id.toString() +
+                                " | Autor = " + biblioteca.livros.get(i).autor +
+                                " | Livro = " + biblioteca.livros.get(i).titulo +
+                                " | Para o cliente " + nomeCliente);
+
+                        biblioteca.livros.get(i).disponivel = false;
+                        nenhumLivroSelecionado = false;
+                    }
+                }
+
+                if (nenhumLivroSelecionado) {
+                    System.out.println("O Id selecionado não corresponde a um livro disponível!");
+                    continue;
+                }
+
+                break;
+            }
         }
     }
 }
