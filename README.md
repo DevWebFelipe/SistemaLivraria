@@ -80,16 +80,3 @@ Este projeto está licenciado sob a licença MIT. Se desejar, adicione um arquiv
 Autor / Contato
 ---------------
 - Desenvolvedor: DevWebFelipe
-
-Próximos passos recomendados
----------------------------
-- Adicionar um arquivo `LICENSE` com o texto da MIT License.
-- Converter para um build system (Maven ou Gradle) para facilitar compilação e empacotamento.
-- Adicionar testes unitários automáticos.
-
----
-
-Se quiser, posso também:
-- adicionar o arquivo `LICENSE` com o texto MIT;
-- criar um `build.gradle` ou `pom.xml` para automação;
-- ajustar `Main.java` para tornar o método `main` público e garantir compatibilidade de execução.
