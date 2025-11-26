@@ -1,0 +1,12 @@
+[  ] - Criar a classe 'Autor'
+[  ] - Criar a classe 'Livro'
+[  ] - Criar a classe 'Biblioteca'
+[  ] - Dentro da classe `Biblioteca`, inicializar as listas para armazenar livros, autores e empréstimos
+[  ] - Adicionar manualmente (hardcoded) alguns autores e livros dentro da classe `Biblioteca` para iniciar o sistema com dados
+[  ] - Implementar o loop principal de interação que pergunta ao usuário se ele deseja ver os livros
+[  ] - Implementar a lógica para o "NÃO": exibir uma mensagem e encerrar o sistema
+[  ] - Implementar a lógica para o "SIM": criar um método para listar no console apenas os livros com o status `disponivel`
+[  ] - Permitir que o usuário escolha um livro da lista através do `id`
+[  ] - Solicitar que o usuário insira o seu nome para o registro do empréstimo
+[  ] - Implementar a regra de negócio: ao emprestar, marcar o livro como indisponível para que não possa ser emprestado novamente na mesma execução
+[  ] - Exibir uma mensagem de sucesso confirmando o empréstimo

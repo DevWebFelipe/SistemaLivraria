@@ -1,0 +1,118 @@
+Guia de Organização de Projeto – Java (Exemplo Base)
+
+------------------------------------------------------------------------
+
+1.  Como Anotar e Extrair as Principais Informações
+
+1.1. Identificar o que o sistema precisa fazer 
+- Listar livros disponíveis 
+- Permitir escolha por ID 
+- Registrar empréstimo 
+- Encerrar quando solicitado
+
+1.2. Identificar as classes e atributos Exemplo:
+
+Classe: Livro 
+- id: int 
+- titulo: String 
+- autor: Autor 
+- disponivel: boolean 
+- dataCadastro: Date 
+- dataAtualizacao: Date
+
+Faça isso para todas as classes.
+
+1.3. Listar ações e comportamentos 
+- Mostrar menu/pergunta inicial 
+- Listar livros disponíveis 
+- Selecionar livro 
+- Registrar nome do cliente 
+- Criar objeto Emprestimo 
+- Marcar livro como indisponível 
+- Encerrar programa
+
+------------------------------------------------------------------------
+
+2.  Como Organizar o Projeto Seguindo Boas Práticas
+
+Estrutura recomendada de pacotes:
+
+src/ model/ Autor.java Livro.java Emprestimo.java
+repository/ Biblioteca.java
+app/ Main.java
+
+-   model → classes que representam entidades
+-   repository → armazenamento/listas e buscas
+-   app → ponto principal da aplicação
+
+------------------------------------------------------------------------
+
+3.  Como Definir a Estrutura do Projeto
+
+Perguntas essenciais:
+
+3.1. O que é dado? → objetos do mundo real → colocar em model.
+3.2. Onde ficam coleções desses objetos? → Biblioteca com listas.
+3.3. Onde fica a lógica principal? → Main.
+3.4. Precisa interagir com usuário? → Scanner no Main.
+
+------------------------------------------------------------------------
+
+4.  Por Onde Começar (Passo a Passo)
+
+PASSO 1 — Criar classes modelo 
+
+- Autor 
+- Livro 
+- Emprestimo
+
+Com: atributos + construtor + getters/setters.
+
+PASSO 2 — Criar classe Biblioteca Contendo:
+
+List livros = new ArrayList<>(); 
+List autores = new ArrayList<>(); 
+List emprestimos = new ArrayList<>();
+
+E métodos simples: 
+- adicionarLivro 
+- listarLivrosDisponiveis 
+- buscarLivroPorId 
+- registrarEmprestimo
+
+PASSO 3 — Popular a biblioteca no Main Criar alguns autores e livros
+para teste.
+
+PASSO 4 — Implementar fluxo do usuário no Main 
+
+1. Perguntar se deseja ver a lista 
+2. Mostrar livros disponíveis 
+3. Pedir id 
+4. Pedir nome do cliente 
+5. Criar empréstimo 
+6. Marcar livro como indisponível 
+7. Encerrar
+
+PASSO 5 — Testes 
+- Empréstimo 
+- Marcação de indisponível 
+- Tentativa de novo empréstimo no mesmo livro
+
+PASSO 6 — Melhorias opcionais 
+- Menu interativo 
+- Validações 
+- Cadastro de novos livros
+
+------------------------------------------------------------------------
+
+Resumo Geral 
+- Ler e destacar requisitos 
+- Identificar classes 
+- Listar comportamentos 
+- Estruturar pastas 
+- Começar pela modelagem 
+- Depois fazer o repositório 
+- Fazer o Main 
+- Testar e depois evoluir
+
+------------------------------------------------------------------------
