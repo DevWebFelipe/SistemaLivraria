@@ -16,12 +16,12 @@ public class Main {
             System.out.println("Quer ver os livros disponíveis? (s/n)");
             String response = scanner.nextLine();
 
-            if (!response.equals("s") && !response.equals("n")) {
+            if (!response.equalsIgnoreCase("s") && !response.equalsIgnoreCase("n")) {
                 System.out.println("Resposta inválida!");
                 continue;
             }
 
-            if (!response.equals("s")) {
+            if (!response.equalsIgnoreCase("s")) {
                 if (!biblioteca.emprestimos.isEmpty()) System.out.println("Empréstimos do dia:");
                 for (int i = 0; i < biblioteca.emprestimos.size(); i++) {
                     System.out.println("Cliente: " + biblioteca.emprestimos.get(i).nomeCliente +
@@ -44,12 +44,12 @@ public class Main {
             System.out.println("Deseja solicitar empréstimo de algum livro? (s/n)");
             response = scanner.nextLine();
 
-            if (!response.equals("s") && !response.equals("n")) {
+            if (!response.equalsIgnoreCase("s") && !response.equalsIgnoreCase("n")) {
                 System.out.println("Resposta inválida!");
                 continue;
             }
 
-            if (!response.equals("s")) {
+            if (!response.equalsIgnoreCase("s")) {
                 System.out.println("Sistema finalizado!");
                 break;
             }
@@ -68,7 +68,7 @@ public class Main {
                             if (nomeCliente.isEmpty()) continue;
 
                             Emprestimo emprestimo = new Emprestimo();
-                            emprestimo.id = String.valueOf(biblioteca.livros.size() + 1);
+                            emprestimo.id = String.valueOf(biblioteca.emprestimos.size() + 1);
                             emprestimo.livro = biblioteca.livros.get(i).titulo;
                             emprestimo.nomeCliente = nomeCliente;
                             emprestimo.dataEmpresitmo = new Date();
