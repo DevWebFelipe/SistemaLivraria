@@ -9,9 +9,9 @@ import java.util.Date;
 import java.util.List;
 
 public class Biblioteca {
-    private List<Livro> livros = new ArrayList<>();
-    private List<Autor> autores = new ArrayList<>();
-    private List<Emprestimo> emprestimos = new ArrayList<>();
+    public List<Livro> livros = new ArrayList<>();
+    public List<Autor> autores = new ArrayList<>();
+    public List<Emprestimo> emprestimos = new ArrayList<>();
 
     public Biblioteca() {
         // inicialização dos livros
@@ -25,15 +25,15 @@ public class Biblioteca {
 
         Livro l2 = new Livro();
         l2.id = "2";
-        l2.titulo = "CLivro de história 2";
+        l2.titulo = "Livro de história 2";
         l2.autor = "Autor livro 2";
-        l2.disponivel = true;
+        l2.disponivel = false;
         l2.dataCadastro = new Date();
         l2.dataAtualizacao = new Date();
 
         Livro l3 = new Livro();
         l3.id = "3";
-        l3.titulo = "CLivro de história 3";
+        l3.titulo = "Livro de história 3";
         l3.autor = "Autor livro 3";
         l3.disponivel = true;
         l3.dataCadastro = new Date();
@@ -41,7 +41,7 @@ public class Biblioteca {
 
         Livro l4 = new Livro();
         l4.id = "4";
-        l4.titulo = "CLivro de história 4";
+        l4.titulo = "Livro de história 4";
         l4.autor = "Autor livro 4";
         l4.disponivel = true;
         l4.dataCadastro = new Date();
